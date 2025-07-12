@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honiwrap® - Kemasan Anti-Banting Ramah Lingkungan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2e7d32;
+            --primary-dark: #1b5e20;
+            --secondary: #ffab00;
+            --light: #f8f9fa;
+            --dark: #212121;
+            --gray: #757575;
+            --danger: #d32f2f;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f8f0;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+        }
+        
+        .cta-button {
+            background-color: var(--secondary);
+            color: var(--dark);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        
+        .cta-button:hover {
+            background-color: #ffc107;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1603739903239-8b6e64c3b185?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .highlight {
+            color: var(--secondary);
+            font-weight: 700;
+        }
+        
+        /* Pain Point Section */
+        .pain-points {
+            background-color: white;
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-dark);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+        
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .problem-card {
+            background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            border-left: 4px solid var(--danger);
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .problem-card i {
+            font-size: 2.5rem;
+            color: var(--danger);
+            margin-bottom: 20px;
+        }
+        
+        .problem-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        /* Solution Section */
+        .solution {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, #e8f5e9, #c8e6c9);
+        }
+        
+        .solution-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        @media (max-width: 768px) {
+            .solution-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .solution-video {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            position: relative;
+            background: #000;
+        }
+        
+        .solution-video video {
+            width: 100%;
+            display: block;
+        }
+        
+        .solution-features {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+        
+        .feature {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .feature-icon {
+            background-color: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--light);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(46, 125, 50, 0.1);
+            font-family: Georgia, serif;
+        }
+        
+        .testimonial-content {
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Offer Section */
+        .offer {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .offer-badge {
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 10px 20px;
+            border-radius: 30px;
+            display: inline-block;
+            font-weight: 700;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .offer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .offer-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .offer-feature {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .offer-feature i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        /* Form Section */
+        .form-section {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .form-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .form-content {
+            padding: 40px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+        }
+        
+        .form-note {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 5px;
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+        }
+        
+        .whatsapp-button {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #25D366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.6);
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            background-color: var(--light);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        /* Trust Badges */
+        .trust-badges {
+            padding: 50px 0;
+            background-color: var(--light);
+            text-align: center;
+        }
+        
+        .badges-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .badge {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            width: 150px;
+        }
+        
+        .badge i {
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column ul li a {
+            color: #bdbdbd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #424242;
+            color: #9e9e9e;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/628111891900" class="whatsapp-button" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            Chat via WhatsApp
+        </a>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-leaf fa-2x"></i>
+                    <div class="logo-text">HONICEL INDONESIA</div>
+                </div>
+                <a href="#form" class="cta-button">
+                    <i class="fas fa-gift"></i> Dapatkan Sample Gratis
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>BARANG PECAH SAAT PENGIRIMAN? BIAYA BUBBLE WRAP NAIK 30%?</h1>
+                <p>GANTI DENGAN <span class="highlight">HONIWRAP®</span> – KEMASAN KERTAS DAUR ULANG ANTI-BANTING 2M, HEMAT 15-30% BIAYA & 100% RAMAH LINGKUNGAN!</p>
+                <a href="#form" class="cta-button">
+                    <i class="fas fa-gift"></i> DAPATKAN SAMPLE GRATIS SEKARANG
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section class="pain-points">
+        <div class="container">
+            <h2 class="section-title">ANDA MENGALAMI INI?</h2>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <i class="fas fa-sad-tear"></i>
+                    <h3>Barang Pecah Terus Menerus</h3>
+                    <p>Rating toko turun karena komplain pelanggan menumpuk setiap kali barang pecah saat pengiriman.</p>
+                </div>
+                <div class="problem-card">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>Biaya Packaging Membengkak</h3>
+                    <p>Harga bubble wrap naik 20-30% dalam setahun terakhir, menggerus keuntungan bisnis Anda.</p>
+                </div>
+                <div class="problem-card">
+                    <i class="fas fa-comment-dots"></i>
+                    <h3>Konsumen Protes Plastik</h3>
+                    <p>Brand Anda dianggap tidak ramah lingkungan karena menggunakan kemasan plastik berlebihan.</p>
+                </div>
+                <div class="problem-card">
+                    <i class="fas fa-ban"></i>
+                    <h3>Ekspor Ditolak</h3>
+                    <p>19 negara di Eropa dan Amerika sudah melarang kemasan plastik, menghambat ekspansi bisnis Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution">
+        <div class="container">
+            <h2 class="section-title">SOLUSI: HONIWRAP® KEMASAN ANTI-BANTING</h2>
+            <div class="solution-content">
+                <div class="solution-video">
+                    <!-- Placeholder for video -->
+                    <div style="background: #000; color: #fff; text-align: center; padding: 80px 20px;">
+                        <i class="fas fa-play-circle" style="font-size: 5rem; margin-bottom: 20px;"></i>
+                        <h3>VIDEO DEMO: UJI BANTING 2 METER</h3>
+                        <p>Botol kaca dibungkus Honiwrap® dijatuhkan dari ketinggian 2 meter</p>
+                    </div>
+                </div>
+                <div class="solution-features">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Anti-Banting 2 Meter</h3>
+                            <p>Barang sampai utuh → rating 5/5 konsisten! Uji lab membuktikan Honiwrap® 32% lebih baik dari bubble wrap.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div>
+                            <h3>Hemat 15-30% Biaya</h3>
+                            <p>Harga lebih terjangkau dari bubble wrap premium. UMKM bisa hemat Rp 1.2-4.5 juta/bulan.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                        <div>
+                            <h3>100% Recycled Paper</h3>
+                            <p>Bersertifikat FSC, lolos regulasi global. Brand Anda akan dianggap eco-friendly oleh konsumen.</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div>
+                            <h3>Food Grade Safe</h3>
+                            <p>Aman untuk kemasan makanan dan kosmetik. Tanpa bahan kimia berbahaya.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">TERBUKTI OLEH PELANGGAN KAMI</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Sejak ganti ke Honiwrap®, komplain pecah turun 90%. Rating Tokopedia naik dari 4.3 → 4.9 dalam 2 bulan! Biaya packaging kami turun Rp 2,8 juta per bulan."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">PT</div>
+                            <div>
+                                <h4>Budi Santoso</h4>
+                                <p>PT Keramik Maju Jaya, Tangerang</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Konsumen sangat senang dengan kemasan eco-friendly kami. Biaya packaging turun Rp 1,8 juta/bulan. Tidak ada lagi komplain barang pecah meski dikirim ke Papua."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">UM</div>
+                            <div>
+                                <h4>Ibu Lia</h4>
+                                <p>UMKM Keripik Mama Lia, Bandung</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Ekspor produk ke Eropa kini lebih mudah dengan Honiwrap®. Tidak ada lagi penolakan karena masalah kemasan plastik. Biaya logistik turun 15% karena lebih ringan."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">CV</div>
+                            <div>
+                                <h4>Rudi Hartono</h4>
+                                <p>CV Furniture Jepara Ekspor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offer Section -->
+    <section class="offer">
+        <div class="container">
+            <div class="offer-badge">
+                <i class="fas fa-gift"></i> PENAWARAN SPESIAL!
+            </div>
+            <div class="offer-content">
+                <h2>UNTUK 50 PEMESAN PERTAMA HARI INI</h2>
+                <div class="offer-features">
+                    <div class="offer-feature">
+                        <i class="fas fa-gift"></i>
+                        <h3>GRATIS 1 ROLL HONIWRAP®</h3>
+                        <p>Senilai Rp 350.000 untuk dicoba</p>
+                    </div>
+                    <div class="offer-feature">
+                        <i class="fas fa-headset"></i>
+                        <h3>GRATIS KONSULTASI</h3>
+                        <p>Dengan ahli packaging Honicel</p>
+                    </div>
+                    <div class="offer-feature">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <h3>GARANSI UANG KEMBALI</h3>
+                        <p>Jika tidak puas dengan produk</p>
+                    </div>
+                </div>
+                <a href="#form" class="cta-button">
+                    <i class="fas fa-tags"></i> DAPATKAN PENAWARAN SPESIAL
+                </a>
+                <p style="margin-top: 20px; opacity: 0.8;">Penawaran berlaku hingga <strong>30 Juli 2025</strong> atau selama persediaan masih ada</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="form-section" id="form">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2><i class="fas fa-file-alt"></i> MINTA SAMPLE GRATIS + DISKON 20%!</h2>
+                    <p>Isi form berikut dan tim kami akan segera menghubungi Anda</p>
+                </div>
+                <div class="form-content">
+                    <form id="sampleForm">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" required placeholder="Masukkan nama lengkap Anda">
+                        </div>
+                        <div class="form-group">
+                            <label for="business">Nama Bisnis</label>
+                            <input type="text" id="business" required placeholder="Nama perusahaan atau usaha">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required placeholder="email@perusahaan.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Nomor WhatsApp</label>
+                            <input type="tel" id="phone" required placeholder="Contoh: 081234567890">
+                            <p class="form-note">Pastikan nomor aktif untuk menerima konfirmasi</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="productType">Jenis Produk yang Dikirim</label>
+                            <select id="productType" required>
+                                <option value="">Pilih jenis produk</option>
+                                <option value="keramik">Keramik/Gelas/Kaca</option>
+                                <option value="elektronik">Elektronik/Gadget</option>
+                                <option value="makanan">Makanan/Minuman</option>
+                                <option value="kosmetik">Kosmetik/Perawatan</option>
+                                <option value="furniture">Furniture/Perabot</option>
+                                <option value="lainnya">Lainnya</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="orderVolume">Rata-rata Order per Bulan</label>
+                            <select id="orderVolume" required>
+                                <option value="">Pilih volume order</option>
+                                <option value="<100">Kurang dari 100 order</option>
+                                <option value="100-500">100-500 order</option>
+                                <option value=">500">Lebih dari 500 order</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Pesan Tambahan</label>
+                            <textarea id="message" rows="3" placeholder="Saya mau sample gratis & penawaran spesial!"></textarea>
+                        </div>
+                        <button type="submit" class="cta-button" style="width: 100%; justify-content: center;">
+                            <i class="fas fa-paper-plane"></i> KIRIM PERMINTAAN SAMPLE
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">PERTANYAAN YANG SERING DIAJUKAN</h2>
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <span>Apakah Honiwrap® benar-benar lebih kuat dari bubble wrap?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>YA! Uji lab independen membuktikan serapan guncangan Honiwrap® 32% lebih baik daripada bubble wrap standar. Kami memiliki video demo yang bisa kami kirimkan via WhatsApp untuk membuktikannya.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Berapa harga per roll Honiwrap®?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Harga mulai dari Rp 300.000 per roll (tergantung ukuran dan volume pemesanan). Untuk penawaran harga spesifik, silakan isi form permintaan sample atau chat kami via WhatsApp.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Berapa lama pengiriman sample gratis?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Pengiriman sample gratis memakan waktu 1-2 hari untuk wilayah Jabodetabek dan 3-4 hari untuk wilayah luar Jawa. Tim kami akan menginformasikan nomor resi setelah sample dikirim.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Apakah ada minimum order (MOQ)?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Tidak ada MOQ! Anda bisa memesan mulai dari 1 roll untuk uji coba. Untuk pemesanan dalam jumlah besar (>50 roll), kami memberikan diskon khusus.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Bagaimana cara pemesanan setelah menerima sample?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Setelah menerima sample, Anda bisa langsung memesan melalui WhatsApp kami di 0811-1891-900. Tim sales kami akan memandu proses pemesanan hingga pengiriman.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <section class="trust-badges">
+        <div class="container">
+            <h2 class="section-title">DI PERCAYA OLEH</h2>
+            <div class="badges-container">
+                <div class="badge">
+                    <i class="fas fa-tree"></i>
+                    <p>FSC Certified</p>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-award"></i>
+                    <p>ISO 9001:2015</p>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-industry"></i>
+                    <p>Kemenperin</p>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-recycle"></i>
+                    <p>Plastic Free</p>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-globe-asia"></i>
+                    <p>Eco Packaging</p>
+                </div>
+            </div>
+            <p style="margin-top: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <strong>Komitmen Lingkungan:</strong> Setiap 1 ton Honicel menghemat 40m³ kayu & mengurangi 35.04 ton CO₂. Kami menggunakan 100% bahan daur ulang untuk semua produk.
+            </p>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="offer" style="padding: 60px 0;">
+        <div class="container">
+            <div class="offer-content">
+                <h2>JANGAN BIARKAN BARANG PECAH & BIAYA PACKAGING MEMBUNUH BISNIS ANDA!</h2>
+                <p style="margin: 20px 0; font-size: 1.2rem;">Dapatkan solusi kemasan anti-banting yang ramah lingkungan dan hemat biaya</p>
+                <a href="#form" class="cta-button" style="font-size: 1.2rem; padding: 15px 30px;">
+                    <i class="fas fa-gift"></i> DAPATKAN SAMPLE GRATIS SEKARANG
+                </a>
+                <p style="margin-top: 20px; font-size: 1.1rem;">
+                    Atau chat langsung via WhatsApp: <strong>0811-1891-900</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>PT HONICEL INDONESIA</h3>
+                    <p>Pioneer in Paper Honeycomb Technology. Menyediakan solusi kemasan dan material ramah lingkungan sejak 1913.</p>
+                    <div class="contact-info" style="margin-top: 20px;">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Pabrik Tangerang:</h4>
+                                <p>Jl. Raya Mauk KM7, Kaw. Industri Mekar Jaya No. 99, Sepatan, Tangerang</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Pabrik Sidoarjo:</h4>
+                                <p>Jl. Raya Panjunan No.4, Panjunan, Sukodono, Sidoarjo, Jawa Timur</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Produk Kami</h3>
+                    <ul>
+                        <li><a href="#">Honiwrap® Paper Wrapper</a></li>
+                        <li><a href="#">Honipack® Honeycomb Board</a></li>
+                        <li><a href="#">Honipack® Angleboard</a></li>
+                        <li><a href="#">Honeycomb Core</a></li>
+                        <li><a href="#">Modular House Panel</a></li>
+                        <li><a href="#">Ceramic Panel</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak Kami</h3>
+                    <ul>
+                        <li><a href="tel:+628111891900"><i class="fas fa-phone"></i> +62 811 1891 900</a></li>
+                        <li><a href="mailto:sales@honicelindonesia.co.id"><i class="fas fa-envelope"></i> sales@honicelindonesia.co.id</a></li>
+                        <li><a href="https://wa.me/628111891900"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 PT Honicel Indonesia. Hak Cipta Dilindungi.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission
+        document.getElementById('sampleForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            
+            // Construct WhatsApp message
+            const message = `Halo Honicel, saya ${name} dari ${document.getElementById('business').value}. Saya tertarik dengan Honiwrap® dan telah mengisi form di website. Saya ingin: 
+- Sample gratis Honiwrap® 
+- Diskon 20% untuk order pertama 
+- Konsultasi packaging 
+            
+Produk yang saya kirim: ${document.getElementById('productType').value}
+Volume order: ${document.getElementById('orderVolume').value}`;
+            
+            // Encode message for URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Open WhatsApp
+            window.open(`https://wa.me/628111891900?text=${encodedMessage}`, '_blank');
+        });
+        
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Close all items
+                faqItems.forEach(faq => {
+                    if (faq !== item) {
+                        faq.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
